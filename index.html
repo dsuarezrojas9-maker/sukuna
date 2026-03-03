@@ -1,102 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Login y Registro</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4e73df, #1cc88a);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            background: white;
-            width: 350px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background: #4e73df;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #2e59d9;
-        }
-
-        .toggle {
-            text-align: center;
-            margin-top: 15px;
-            cursor: pointer;
-            color: #4e73df;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Login y Registro</title>
 </head>
 <body>
 
-<div class="container">
-    
-    <!-- LOGIN -->
-    <div id="loginForm">
-        <h2>Iniciar Sesión</h2>
-        <input type="email" placeholder="Correo electrónico" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button>Ingresar</button>
-        <div class="toggle" onclick="showRegister()">¿No tienes cuenta? Regístrate</div>
-    </div>
+<h2>Registro</h2>
+<form action="registro.php" method="POST">
+    <input type="text" name="nombre" placeholder="Nombre" required><br>
+    <input type="email" name="email" placeholder="Correo" required><br>
+    <input type="password" name="password" placeholder="Contraseña" required><br>
+    <button type="submit">Registrarse</button>
+</form>
 
-    <!-- REGISTRO -->
-    <div id="registerForm" class="hidden">
-        <h2>Crear Cuenta</h2>
-        <input type="text" placeholder="Nombre completo" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button>Registrarse</button>
-        <div class="toggle" onclick="showLogin()">¿Ya tienes cuenta? Inicia sesión</div>
-    </div>
+<hr>
 
-</div>
-
-<script>
-    function showRegister() {
-        document.getElementById("loginForm").classList.add("hidden");
-        document.getElementById("registerForm").classList.remove("hidden");
-    }
-
-    function showLogin() {
-        document.getElementById("registerForm").classList.add("hidden");
-        document.getElementById("loginForm").classList.remove("hidden");
-    }
-</script>
+<h2>Login</h2>
+<form action="login.php" method="POST">
+    <input type="email" name="email" placeholder="Correo" required><br>
+    <input type="password" name="password" placeholder="Contraseña" required><br>
+    <button type="submit">Iniciar Sesión</button>
+</form>
 
 </body>
 </html>
